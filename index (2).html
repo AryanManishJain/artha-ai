@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artha AI - Finance Chat Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">📊</span>
+                    <h1>Artha AI</h1>
+                </div>
+                <button class="new-chat-btn">+ New chat</button>
+            </div>
+
+            <div class="sidebar-content">
+                <div class="finance-modes">
+                    <h3>Finance modes</h3>
+                    <select id="modeSelect" class="mode-select">
+                        <option value="general">General Finance</option>
+                        <option value="investing">Investing</option>
+                        <option value="tax">Tax Planning</option>
+                        <option value="startup">Startup Runway</option>
+                    </select>
+                </div>
+
+                <div class="recent-chats">
+                    <h3>Recent chats</h3>
+                    <ul>
+                        <li><a href="#wealth-plan">Wealth plan</a></li>
+                        <li><a href="#startup-runway">Startup runway</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="main-content">
+            <div class="chat-header">
+                <h2>Chat with Artha AI</h2>
+                <p class="mode-status" id="modeStatus">Investing Mode Active</p>
+            </div>
+
+            <!-- Chat Messages Container -->
+            <div class="chat-messages" id="chatBox">
+                <div class="message ai">
+                    <div class="message-content">
+                        Hello! I'm Artha AI, your personal finance assistant. I'm currently in <span id="currentMode">Investing</span> mode. Ask me anything about investments like PPF, SIP, mutual funds, and more.
+                    </div>
+                    <span class="message-time">06:44 pm</span>
+                </div>
+            </div>
+
+            <!-- Quick Action Buttons -->
+            <div class="quick-actions">
+                <button class="action-btn">Explain PPF</button>
+                <button class="action-btn">What is SIP</button>
+                <button class="action-btn">What is ELSS</button>
+                <button class="action-btn">Tell me about NPS</button>
+            </div>
+
+            <!-- Chat Input Form -->
+            <form class="chat-form" id="chat-form">
+                <textarea 
+                    id="input" 
+                    class="chat-input" 
+                    placeholder="Ask anything about budgeting, investing, startup metrics, taxes, or debt..."
+                    rows="3"
+                ></textarea>
+                <button type="submit" class="send-btn">
+                    <span>Send</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path>
+                    </svg>
+                </button>
+            </form>
+
+            <div class="disclaimer">
+                <p><strong>Educational only</strong> — not personalized financial, legal, or tax advice.</p>
+            </div>
+        </main>
+
+        <!-- Right Sidebar - Calculator -->
+        <aside class="right-sidebar">
+            <div class="calculator-section">
+                <div class="calculator-header">
+                    <h3>PPF Calculator</h3>
+                    <p class="calculator-rate">7.1% p.a. interest rate</p>
+                </div>
+
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label>Monthly Investment</label>
+                        <div class="input-with-currency">
+                            <span>₹</span>
+                            <input type="number" id="monthlyAmount" value="100000" min="500" max="1500000">
+                        </div>
+                    </div>
+
+                    <div class="range-slider">
+                        <input type="range" id="amountSlider" min="500" max="1500000" value="100000" step="500">
+                        <div class="range-labels">
+                            <span>₹500</span>
+                            <span>₹12,500/month</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Investment Duration</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="years" value="17" min="1" max="50">
+                            <span>yrs</span>
+                        </div>
+                    </div>
+
+                    <div class="range-slider">
+                        <input type="range" id="yearsSlider" min="1" max="50" value="17">
+                        <div class="range-labels">
+                            <span>1 year</span>
+                            <span>50 years</span>
+                        </div>
+                    </div>
+
+                    <button type="button" class="calculate-btn" onclick="calculatePPF()">Calculate</button>
+                </div>
+
+                <div class="calculator-results">
+                    <div class="result-item">
+                        <div class="result-label">Maturity Amount</div>
+                        <div class="result-value">
+                            <span class="currency">₹</span>
+                            <span class="amount" id="maturityAmount">4.00 Cr</span>
+                        </div>
+                        <div class="result-period" id="maturityPeriod">after 17 years</div>
+                    </div>
+
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <div class="result-label">💰 Invested</div>
+                            <div class="result-value" id="totalInvested">₹2.04 Cr</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">📈 Interest</div>
+                            <div class="result-value" id="totalInterest">₹1.96 Cr</div>
+                        </div>
+                    </div>
+
+                    <div class="roi-section">
+                        <div class="roi-label">Return on Investment</div>
+                        <div class="roi-value">+96%</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
