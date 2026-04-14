@@ -6,28 +6,23 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <div class="container">
-  <h1>💰 Artha AI</h1>
+  <h1>Artha AI</h1>
   <p>Your Finance Chat Assistant</p>
-
   <div class="chat-box" id="chatBox">
     <div class="bot-msg">Hello! Ask me about budgeting, investing, or startups.</div>
   </div>
-
   <div class="input-area">
     <input type="text" id="userInput" placeholder="Type your question...">
     <button onclick="sendMessage()">Send</button>
   </div>
 </div>
-
 <script src="script.js"></script>
 </body>
 </html>            <div class="disclaimer">
                 <p><strong>Educational only</strong> — not personalized financial, legal, or tax advice.</p>
             </div>
         </main>
-
         <!-- Right Sidebar - Calculator -->
         <aside class="right-sidebar">
             <div class="calculator-section">
@@ -35,7 +30,6 @@
                     <h3>PPF Calculator</h3>
                     <p class="calculator-rate">7.1% p.a. interest rate</p>
                 </div>
-
                 <div class="calculator-form">
                     <div class="form-group">
                         <label>Monthly Investment</label>
@@ -44,7 +38,6 @@
                             <input type="number" id="monthlyAmount" value="100000" min="500" max="1500000">
                         </div>
                     </div>
-
                     <div class="range-slider">
                         <input type="range" id="amountSlider" min="500" max="1500000" value="100000" step="500">
                         <div class="range-labels">
@@ -52,7 +45,6 @@
                             <span>₹12,500/month</span>
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label>Investment Duration</label>
                         <div class="input-with-unit">
@@ -60,7 +52,6 @@
                             <span>yrs</span>
                         </div>
                     </div>
-
                     <div class="range-slider">
                         <input type="range" id="yearsSlider" min="1" max="50" value="17">
                         <div class="range-labels">
@@ -68,10 +59,8 @@
                             <span>50 years</span>
                         </div>
                     </div>
-
                     <button type="button" class="calculate-btn" onclick="calculatePPF()">Calculate</button>
                 </div>
-
                 <div class="calculator-results">
                     <div class="result-item">
                         <div class="result-label">Maturity Amount</div>
@@ -81,7 +70,6 @@
                         </div>
                         <div class="result-period" id="maturityPeriod">after 17 years</div>
                     </div>
-
                     <div class="results-grid">
                         <div class="result-item">
                             <div class="result-label">💰 Invested</div>
@@ -92,7 +80,6 @@
                             <div class="result-value" id="totalInterest">₹1.96 Cr</div>
                         </div>
                     </div>
-
                     <div class="roi-section">
                         <div class="roi-label">Return on Investment</div>
                         <div class="roi-value">+96%</div>
@@ -101,7 +88,6 @@
             </div>
         </aside>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
