@@ -1,4 +1,5 @@
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
   background: #0f172a;
   color: white;
@@ -8,14 +9,44 @@ body {
   height: 100vh;
 }
 
-.container {
-  width: 400px;
+/* App Container */
+.app {
+  width: 420px;
   background: #1e293b;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+#modeStatus {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* Mode Selector */
+.mode-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+select {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+/* Chat Box */
 .chat-box {
   height: 300px;
   overflow-y: auto;
@@ -25,18 +56,20 @@ body {
   margin-bottom: 10px;
 }
 
-.bot-msg {
-  text-align: left;
-  margin: 5px;
-  color: #38bdf8;
-}
-
+/* Messages */
 .user-msg {
   text-align: right;
-  margin: 5px;
   color: #22c55e;
+  margin: 5px 0;
 }
 
+.bot-msg {
+  text-align: left;
+  color: #38bdf8;
+  margin: 5px 0;
+}
+
+/* Input Area */
 .input-area {
   display: flex;
 }
@@ -44,7 +77,7 @@ body {
 input {
   flex: 1;
   padding: 8px;
-  border-radius: 5px;
+  border-radius: 6px;
   border: none;
 }
 
@@ -52,35 +85,26 @@ button {
   padding: 8px;
   margin-left: 5px;
   border: none;
+  border-radius: 6px;
   background: #3b82f6;
   color: white;
-  border-radius: 5px;
   cursor: pointer;
-}.logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 16px;
 }
 
-.logo-icon {
-    font-size: 28px;
-    background: linear-gradient(135deg, var(--accent-color) 0%, var(--green-accent) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+/* Buttons */
+.actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.logo h1 {
-    font-size: 24px;
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--accent-color) 0%, var(--green-accent) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.action-btn {
+  background: #334155;
 }
 
 .new-chat-btn {
+  background: #ef4444;
+}.new-chat-btn {
     width: 100%;
     padding: 10px 12px;
     background: var(--accent-color);
