@@ -1,6 +1,8 @@
 // ============================================
 // Artha AI - Finance Chat Assistant
+// Safe + Advanced Script
 // ============================================
+
 // Knowledge Base
 const financeKnowledgeBase = {
     general: {
@@ -81,6 +83,52 @@ function sendMessage() {
 
     const text = input.value.trim();
     if (text === '') return;
+
+    addMessage(text, true);
+    input.value = '';
+
+    setTimeout(() => {
+        const reply = generateAIResponse(text);
+        addMessage(reply, false);
+    }, 400);
+}
+
+// Form support (if using form)
+const chatForm = getEl('chat-form');
+if (chatForm) {
+    chatForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        sendMessage();
+    });
+}
+
+// Button support (if using button)
+const sendBtn = document.querySelector('button');
+if (sendBtn) {
+    sendBtn.addEventListener('click', sendMessage);
+}
+
+// Mode change
+const modeSelect = getEl('modeSelect');
+if (modeSelect) {
+    modeSelect.addEventListener('change', function() {
+        addMessage("Switched to " + this.value + " mode");
+    });
+}
+
+// New chat
+const newChatBtn = document.querySelector('.new-chat-btn');
+if (newChatBtn) {
+    newChatBtn.addEventListener('click', () => {
+        const chatBox = getEl('chatBox');
+        if (chatBox) chatBox.innerHTML = '';
+    });
+}
+
+// Init
+document.addEventListener('DOMContentLoaded', () => {
+    addMessage("Hello! I am Artha AI. Ask me anything about finance.");
+});    if (text === '') return;
 
     addMessage(text, true);
     input.value = '';
